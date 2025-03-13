@@ -1,6 +1,8 @@
-/* General Styles */
+/* styles.css - A|M Event Styling Website */
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -10,14 +12,20 @@ body {
 /* Header */
 header {
     background: #222;
-    padding: 20px;
-    text-align: center;
     color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -28,44 +36,85 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 18px;
 }
 
 /* Hero Section */
 .hero {
-    background: url('images/event-styling.jpg') no-repeat center center/cover;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
-    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .cta-button {
-    display: inline-block;
-    background: #ff6600;
+    background: #ff4081;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
     border-radius: 5px;
+}
+
+.cta-button:hover {
+    background: #e60073;
 }
 
 /* Services Section */
 .services {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
 }
 
 .service-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .service-item {
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service-item h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+/* Testimonials */
+.testimonials {
+    text-align: center;
+    background: #eee;
+    padding: 50px 20px;
+}
+
+testimonials blockquote {
+    font-style: italic;
+    font-size: 20px;
+    margin: 20px 0;
 }
 
 /* Footer */
@@ -75,3 +124,4 @@ footer {
     text-align: center;
     padding: 20px;
 }
+

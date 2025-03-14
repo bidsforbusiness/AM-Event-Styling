@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | A|M Event Styling</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">A|M Event Styling</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-content">
+    <h1>Our Services</h1>
+    <p>We offer a variety of event styling and decor services:</p>
+    <ul>
+        <li>Wedding Planning & Styling</li>
+        <li>Luxury Picnics</li>
+        <li>Corporate Event Styling</li>
+        <li>Event Decor Hire</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2025 A|M Event Styling. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

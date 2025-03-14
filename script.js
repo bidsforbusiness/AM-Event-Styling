@@ -41,22 +41,4 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Please fill in all fields before submitting.");
                 event.preventDefault();
             }
-        });
-    }
-
-    // AI Chatbot initialization
-    (function() {
-        var chatbot = document.createElement('script');
-        chatbot.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js';
-        chatbot.async = true;
-        document.body.appendChild(chatbot);
-
-        chatbot.onload = function() {
-            window.botpressWebChat.init({
-                "botId": "YOUR_BOT_ID_HERE",
-                "host": "https://cdn.botpress.cloud/webchat/v1",
-                "clientId": "YOUR_CLIENT_ID_HERE"
-            });
-        };
-    })();
-});
+    

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - A|M Event Styling</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Our Packages</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="packages">
+        <div class="package">
+            <h2>Basic Package</h2>
+            <p>Includes décor hire and setup.</p>
+            <p>Price: £XXX</p>
+        </div>
+        <div class="package">
+            <h2>Premium Package</h2>
+            <p>Includes full styling and décor setup.</p>
+            <p>Price: £XXX</p>
+        </div>
+        <div class="package">
+            <h2>Luxury Package</h2>
+            <p>Complete event styling with planning support.</p>
+            <p>Price: £XXX</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 A|M Event Styling. All rights reserved.</p>
+    </footer>
+</body>
+</html>

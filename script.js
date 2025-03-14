@@ -1,44 +1,51 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Smooth Scrolling for Navigation
+document.addEventListener("DOMContentLoaded", function() {
+    // Smooth scrolling for navigation links
     const links = document.querySelectorAll("nav ul li a");
 
     links.forEach(link => {
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", function(event) {
             event.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
             const targetElement = document.getElementById(targetId);
-
+            
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 60,
+                    top: targetElement.offsetTop - 50,
                     behavior: "smooth"
                 });
             }
         });
     });
 
-    // Toggle Mobile Menu
+    // Toggle mobile menu
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector("nav ul");
 
     if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", function() {
             navMenu.classList.toggle("active");
         });
     }
 
-    // Animate Images on Scroll
-    const serviceItems = document.querySelectorAll(".service-item img");
+    // Close mobile menu on link click (for better UX)
+    navMenu.querySelectorAll("li a").forEach(link => {
+        link.addEventListener("click", function() {
+            navMenu.classList.remove("active");
+        });
+    });
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.transform = "scale(1.1)";
-            } else {
-                entry.target.style.transform = "scale(1)";
+    // Contact form validation
+    const contactForm = document.querySelector("#contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim();
+            const message = document.querySelector("#message").value.trim();
+
+            if (!name || !email || !message) {
+                alert("Please fill in all fields before submitting.");
+                event.preventDefault();
             }
         });
-    }, { threshold: 0.5 });
-
-    serviceItems.forEach(img => observer.observe(img));
+    }
 });

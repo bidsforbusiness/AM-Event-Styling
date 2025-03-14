@@ -1,56 +1,44 @@
-/* script.js - A|M Event Styling Website */
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scrolling for navigation links
+document.addEventListener("DOMContentLoaded", function () {
+    // Smooth Scrolling for Navigation
     const links = document.querySelectorAll("nav ul li a");
-    
+
     links.forEach(link => {
-        link.addEventListener("click", function(event) {
+        link.addEventListener("click", function (event) {
             event.preventDefault();
             const targetId = this.getAttribute("href").substring(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 50,
+                    top: targetElement.offsetTop - 60,
                     behavior: "smooth"
                 });
             }
         });
     });
 
-    // Toggle mobile menu (if applicable)
+    // Toggle Mobile Menu
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector("nav ul");
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", function() {
+    if (menuToggle) {
+        menuToggle.addEventListener("click", function () {
             navMenu.classList.toggle("active");
         });
     }
 
-    // Simple form validation
-    const contactForm = document.querySelector("#contact-form");
-    
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
-            const name = document.querySelector("#name").value.trim();
-            const email = document.querySelector("#email").value.trim();
-            const message = document.querySelector("#message").value.trim();
+    // Animate Images on Scroll
+    const serviceItems = document.querySelectorAll(".service-item img");
 
-            if (!name || !email || !message) {
-                alert("Please fill in all fields before submitting.");
-                event.preventDefault();
-            } else if (!validateEmail(email)) {
-                alert("Please enter a valid email address.");
-                event.preventDefault();
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.transform = "scale(1.1)";
+            } else {
+                entry.target.style.transform = "scale(1)";
             }
         });
-    }
+    }, { threshold: 0.5 });
 
-    // Email validation function
-    function validateEmail(email) {
-        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return re.test(email);
-    }
+    serviceItems.forEach(img => observer.observe(img));
 });

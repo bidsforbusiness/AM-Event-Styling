@@ -18,45 +18,39 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-    
+
     // Toggle mobile menu (if applicable)
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector("nav ul");
-    
-    if (menuToggle) {
+
+    if (menuToggle && navMenu) {
         menuToggle.addEventListener("click", function() {
             navMenu.classList.toggle("active");
         });
     }
-    
+
     // Simple form validation
     const contactForm = document.querySelector("#contact-form");
+    
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
             const name = document.querySelector("#name").value.trim();
             const email = document.querySelector("#email").value.trim();
             const message = document.querySelector("#message").value.trim();
-            
+
             if (!name || !email || !message) {
                 alert("Please fill in all fields before submitting.");
+                event.preventDefault();
+            } else if (!validateEmail(email)) {
+                alert("Please enter a valid email address.");
                 event.preventDefault();
             }
         });
     }
 
-    // AI Chatbot initialization
-    (function() {
-        var chatbot = document.createElement('script');
-        chatbot.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js';
-        chatbot.async = true;
-        document.body.appendChild(chatbot);
-
-        chatbot.onload = function() {
-            window.botpressWebChat.init({
-                "botId": "YOUR_BOT_ID_HERE",
-                "host": "https://cdn.botpress.cloud/webchat/v1",
-                "clientId": "YOUR_CLIENT_ID_HERE"
-            });
-        };
-    })();
+    // Email validation function
+    function validateEmail(email) {
+        const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return re.test(email);
+    }
 });

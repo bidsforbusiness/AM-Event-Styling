@@ -1,74 +1,74 @@
-/* styles.css - A|M Event Styling Website */
-
-/* Hero Section */
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.cta-button {
-    background: #ff4081;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    display: inline-block;
+/* Responsive Image Sizing */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.cta-button:hover {
-    background: #e60073;
-}
-
-/* Services Section */
-.services {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-item {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.service-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.service-item h3 {
-    margin-top: 10px;
-    font-size: 24px;
-}
-
-/* Testimonials Section */
-.testimonials {
-    text-align: center;
-    background: #eee;
-    padding: 50px 20px;
-}
-
-.testimonials blockquote {  /* Fixed selector */
-    font-style: italic;
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-/* Footer */
-footer {
+/* Navigation Bar */
+nav {
     background: #222;
     color: white;
-    text-align: center;
-    padding: 20px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #222;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }

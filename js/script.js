@@ -21,3 +21,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+/* Header Image */
+.header {
+    position: relative;
+    text-align: center;
+    background: #222;
+    padding: 0;
+}
+
+.header-image {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    object-fit: cover;
+}
